@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KatalogMobilny.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25"> 
+            <Image
+                Source="kisikpisik.jpg"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="kisik bog chto nie wierit tau w lob" />
+
+            <Label
+                Text="Cześć Człowieku"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Label
+                Text="Kopnij przycisk ↓"
+                x:Name="CounterBtn"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2" />
+            <Button
+                Text="Kopnij mnie"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Fill" BackgroundColor="{StaticResource Primary}" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
