@@ -9,16 +9,21 @@
             InitializeComponent();
         }
 
-        private void OnCounterClicked(object? sender, EventArgs e)
+        private void PokazButton(object sender, EventArgs e)
         {
-            count++;
-
-            if (count == 1)
-                CounterBtn.Text = $"Kopnąłeś {count} raz";
-            else
-                CounterBtn.Text = $"Kopnąłeś {count} razy";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            EtykietaWyniku.Text = "Processor wybrano!";
         }
+
+        //private void OnCounterClicked(object? sender, EventArgs e)
+        //{
+        //    count++;
+
+        //    if (count == 1)
+        //        CounterBtn.Text = $"Kopnąłeś {count} raz";
+        //    else
+        //        CounterBtn.Text = $"Kopnąłeś {count} razy";
+
+        //    SemanticScreenReader.Announce(CounterBtn.Text);
+        //}
     }
 }
