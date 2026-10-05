@@ -1,4 +1,4 @@
-﻿namespace KatalogMobilny
+﻿﻿namespace KatalogMobilny
 {
     public partial class MainPage : ContentPage
     {
@@ -6,12 +6,18 @@
 
         public MainPage()
         {
+            //alternatywa tworzenia elementów interfejsu zamiast xamla
+            //tego nie robimy, tutaj tylko logika!
             InitializeComponent();
         }
 
         private void PokazButton(object sender, EventArgs e)
         {
-            EtykietaWyniku.Text = "Processor wybrano!";
+            EtykietaWyniku.Text = "Wybrano processor";
+        }
+        private void UkryjButton(object sender, EventArgs e)
+        {
+            EtykietaWyniku.Text = "Nic nie wybrano";
         }
 
         //private void OnCounterClicked(object? sender, EventArgs e)
@@ -19,11 +25,11 @@
         //    count++;
 
         //    if (count == 1)
-        //        CounterBtn.Text = $"Kopnąłeś {count} raz";
+        //        Kliknieto.Text = $"Kliknięto {count} raz";
         //    else
-        //        CounterBtn.Text = $"Kopnąłeś {count} razy";
+        //        Kliknieto.Text = $"Kliknięto {count} razy";
 
-        //    SemanticScreenReader.Announce(CounterBtn.Text);
-        //}
+        //    SemanticScreenReader.Announce(Kliknieto.Text);
+        //} 
     }
 }
