@@ -1,4 +1,4 @@
-﻿﻿namespace KatalogMobilny
+﻿namespace KatalogMobilny
 {
     public partial class MainPage : ContentPage
     {
