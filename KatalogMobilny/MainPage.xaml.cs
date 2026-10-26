@@ -6,30 +6,27 @@
 
         public MainPage()
         {
-            //alternatywa tworzenia elementów interfejsu zamiast xamla
-            //tego nie robimy, tutaj tylko logika!
             InitializeComponent();
+
+
+            //alternatywne tworzenie elementów interfejsu zamiast
+            //xamla - tego nie robimy!
+            //Label etykieta = new Label();
+            //etykieta.Text = "Procesor";
+            //etykieta.Parent = MainLayout;
         }
 
-        private void PokazButton(object sender, EventArgs e)
-        {
-            EtykietaWyniku.Text = "Wybrano processor";
-        }
-        private void UkryjButton(object sender, EventArgs e)
-        {
-            EtykietaWyniku.Text = "Nic nie wybrano";
-        }
+        //private void PokazClicked(object sender, EventArgs e)
+        //{
+        //    EtykietaWyniku.Text = "Wybrano procesor";
+        //}
 
-        //private void OnCounterClicked(object? sender, EventArgs e)
+        
+        //private void CounterBtn_Clicked(object sender, EventArgs e)
         //{
         //    count++;
-
-        //    if (count == 1)
-        //        Kliknieto.Text = $"Kliknięto {count} raz";
-        //    else
-        //        Kliknieto.Text = $"Kliknięto {count} razy";
-
-        //    SemanticScreenReader.Announce(Kliknieto.Text);
-        //} 
+        //    EtykietaPowitania.Text = $"Kliknięto {count} razy";
+        //}
+        
     }
 }
