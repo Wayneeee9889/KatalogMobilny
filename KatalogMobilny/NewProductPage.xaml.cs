@@ -6,12 +6,39 @@ public partial class NewProductPage : ContentPage
     {
         InitializeComponent();
     }
-
     private int licznik = 0;
+    private int znaki = 0;
     private void NowyProdukt_Clicked(object sender, EventArgs e)
     {
-
         licznik++;
-        EtykietaWyniku.Text = $"kliknięto {licznik} razy";
+        EtykietaWyniku2.Text = $"Kliknięto {licznik} razy";
+    }
+    private void Powrot_Clicked(object sender, EventArgs e)
+    {
+        licznik = 0;
+        EtykietaWyniku2.Text = "";
+    }
+    private void IleZnakow(object sender, EventArgs e)
+    {
+        znaki++;
+        ZnakiNazwy.Text = $"Nazwa ma {znaki} znaków";
+    }
+    private void KtoraKategoria(object sender, EventArgs e)
+    {
+        var picker = (Picker)sender;
+        int WybranyIndex = picker.SelectedIndex;
+        WybranaKategoria.Text = $"Kategoria: {(string)picker.ItemsSource[WybranyIndex]}";
+    }
+    private void CzyDostepny(object sender, ToggledEventArgs e)
+    {
+        if (e.Value)
+        {
+            DostepnyLabel.Text = "Produkt dostępny";
+        }
+        else
+        {
+            DostepnyLabel.Text = "Produkt Niedostępny";
+        }
+
     }
 }
