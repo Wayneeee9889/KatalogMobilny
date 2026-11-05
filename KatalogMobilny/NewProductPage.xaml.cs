@@ -10,17 +10,45 @@ public partial class NewProductPage : ContentPage
     private int znaki = 0;
     private void NowyProdukt_Clicked(object sender, EventArgs e)
     {
-        licznik++;
-        EtykietaWyniku2.Text = $"Kliknięto {licznik} razy";
+        //licznik++;
+        //EtykietaWyniku2.Text = $"Kliknięto {licznik} razy";
+        if (double.TryParse(CenaEntry.Text, out double cena))
+        {
+            EtykietaWyniku2.Text = "Niepoprawna cena!";
+            return;
+        }
+
+        if (double.TryParse(CenaEntry.Text, out double ilosc))
+        {
+            EtykietaWyniku2.Text = "Niepoprawna ilosc!";
+            return;
+        }
+        if(cena <0 || ilosc < 0)
+        {
+            EtykietaWyniku2.Text = "Niepoprawna ilość lub cena";
+            return;
+        }
+        double wartosc = cena * ilosc;
+        string? nazwa = NazwaEntry.Text;
+        if (string.IsNullOrWhiteSpace(nazwa))
+        {
+            EtykietaWyniku2.Text = "Niepoprawna nazwa!";
+            return;
+        }
+        if (KategoriaPicker.SelectedItem == null)
+        {
+            EtykietaWyniku2.Text = "Nie wybrano kategorii!";
+            return;
+        }
+        EtykietaWyniku2.Text = $"Produkt: {nazwa}, cena: {cena}, kategoria: {KategoriaPicker.SelectedItem}, wartosc: {wartosc}";
     }
-    private void Powrot_Clicked(object sender, EventArgs e)
-    {
-        licznik = 0;
-        EtykietaWyniku2.Text = "";
-    }
+
+
+
     private void IleZnakow(object sender, EventArgs e)
     {
-        znaki++;
+        string tekstNazwy = ZnakiNazwy.Text;
+        int IloscZnakow = tekstNazwy.Length;
         ZnakiNazwy.Text = $"Nazwa ma {znaki} znaków";
     }
     private void KtoraKategoria(object sender, EventArgs e)
@@ -38,7 +66,15 @@ public partial class NewProductPage : ContentPage
         else
         {
             DostepnyLabel.Text = "Produkt Niedostępny";
-        }
-
+        } }
+        private void Powrot_Clicked(object sender, EventArgs e)
+    {
+        licznik = 0;
+        EtykietaWyniku2.Text = "";
+        ZnakiNazwy.Text = "";
+        WybranaKategoria.Text = "";
+        EtykietaWyniku2.Text = "";
     }
+
+
 }
